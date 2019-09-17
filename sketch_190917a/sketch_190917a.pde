@@ -1,6 +1,7 @@
 // BACKGROUND
 PImage lokale;
 PImage skole;
+PImage lokale2;
 
 // STATES
 int state = 0; //The current state
@@ -16,6 +17,7 @@ void setup(){
   
 size(940, 529);
 lokale = loadImage("Classroom.jpg");
+lokale2 = loadImage("lokale2.jpg");
 skole= loadImage("bygning.jpg");
 
 }
@@ -31,13 +33,13 @@ switch(state){
  
   case GAME:
   
-  background(lokale);
+  Display_Singleplayer();
 
   break; 
   
   case MULTIGAME:
   
-  background(0);
+  Display_Multiplayer();
 
   break;
   
