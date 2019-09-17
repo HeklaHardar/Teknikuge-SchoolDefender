@@ -1,8 +1,7 @@
 int state = 0; //The current state
 final int MAIN_MENU = 0;
-final int HIGHSCORE = 1;
-final int GAME = 2;
-final int GAMEOVER = 3;
+final int GAME = 1;
+final int GAMEOVER = 2;
 
 void setup{
   
