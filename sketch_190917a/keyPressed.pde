@@ -2,22 +2,24 @@ void keyPressed(){
   if(state==1){
     if (key == CODED) {
     if (keyCode == LEFT){
-    Playerx--;
-    
+    left = true;
     }
     if (keyCode == RIGHT){
-      
-     Playerx++;
-    
-    }
-
-
-
-    }
-
+    right = true;
+   }
   }
+ }
+}
 
-
-
-
+void keyReleased(){
+if(state==1){
+    if (key == CODED) {
+    if (keyCode == LEFT){
+    left = false;
+    }
+    if (keyCode == RIGHT){
+    right = false;
+   }
+  }
+ }
 }

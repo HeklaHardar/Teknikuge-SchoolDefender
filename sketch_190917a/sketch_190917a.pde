@@ -19,7 +19,8 @@ final int HIGHSCORE = 4;
 int Playerx;
 int Playery;
 
-
+boolean left;
+boolean right;
 
 void setup(){
   
@@ -42,12 +43,29 @@ Playery=height-50;
 
 void draw(){
   
+// Gør left og right true for at de kan bruges til smooth bevægelse.
+if (left == true){
+    Playerx-=10;
+}
+if (right == true){
+    Playerx+=10;
+}
+
+// Lav edge for Playerx
+if (Playerx<30){
+   Playerx=30;
+}
+if (Playerx>900){
+   Playerx=900;
+}
+
+
 switch(state){
   case MAIN_MENU:
   Display_Main_Menu();
   
   break;
- 
+  
   case GAME:
   
   Display_Singleplayer();
