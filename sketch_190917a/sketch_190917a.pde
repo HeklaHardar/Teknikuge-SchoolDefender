@@ -3,6 +3,7 @@ PImage lokale;
 PImage skole;
 PImage lokale2;
 PImage Klaus;
+PImage Bog;
 
 // FONTS
 PFont zerovelo;
@@ -28,8 +29,9 @@ size(940, 529);
 
 lokale = loadImage("Classroom.jpg");
 lokale2 = loadImage("lokale2.jpg");
-skole= loadImage("bygning.jpg");
-Klaus= loadImage("Klaus_Pixelart.png");
+skole = loadImage("bygning.jpg");
+Klaus = loadImage("Klaus_Pixelart.png");
+Bog = loadImage("Flying book.png");
 
 zerovelo = createFont("zerovelo.ttf", 50);
 basic = createFont("Lucida Sans", 12);
