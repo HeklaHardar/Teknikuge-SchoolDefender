@@ -3,6 +3,9 @@ PImage lokale;
 PImage skole;
 PImage lokale2;
 
+PFont zerovelo;
+PFont basic;
+
 // STATES
 int state = 0; //The current state
 final int MAIN_MENU = 0;
@@ -19,6 +22,9 @@ size(940, 529);
 lokale = loadImage("Classroom.jpg");
 lokale2 = loadImage("lokale2.jpg");
 skole= loadImage("bygning.jpg");
+
+zerovelo = createFont("zerovelo.ttf", 50);
+basic = createFont("Lucida Sans", 12);
 
 }
 
