@@ -5,6 +5,7 @@ float EnemySpeed = 4;
 void Display_Singleplayer(){
 background(lokale);
 imageMode(CENTER);
+image(Tavle,width/2,45, 128,90);
 image(Klaus, Playerx, Playery, 25, 73);
 // Gør left og right true for at de kan bruges til smooth bevægelse (For PlayerKlaus).
 if (left == true){
