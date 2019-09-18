@@ -1,6 +1,6 @@
 void Display_Main_Menu(){
 
-  background(skole);
+background(skole);
 fill(#C1828B);
 rectMode(CENTER);
 rect(width/2,2*(height/4),150,50);  

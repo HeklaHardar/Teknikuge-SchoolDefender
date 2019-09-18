@@ -1,7 +1,7 @@
 float EnemyPosx = round(random(940));
 float EnemyPosy = 0;
 float EnemySpeed = 4;
-float angle;
+float angle, angle2;
 boolean pressingUp;
 boolean pressingDown;
 

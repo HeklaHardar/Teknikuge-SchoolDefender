@@ -1,3 +1,8 @@
+boolean pressingW, pressingS, A, D;
+boolean left, right;
+float EnemyPosx2 = round(random(930));
+float EnemyPosy2 = 0;
+
 void Display_Multiplayer(){
 background(lokale2);
 imageMode(CENTER);
@@ -37,14 +42,60 @@ if (Playerx>900){
   imageMode(CENTER);
   image(Klaus,0,0);
   popMatrix();
-  
+
 EnemyPosy = EnemyPosy + EnemySpeed;
 if (EnemyPosy > height){
-  EnemyPosx = round(random(940));
+  EnemyPosx = round(random(930));
 }
 image(Bog, EnemyPosx, EnemyPosy, 50,50);
 
 if (EnemyPosy > height){
    EnemyPosy = 60;
+ }
+
+
+//------------------------------------------------
+//------------------------------------------------
+//------------------------------------------------
+
+if (A == true){
+    Player2x-=10;
+}
+if (D == true){
+    Player2x+=10;
+}
+// Laver if-statements til at give PlayerKlaus roterene evner
+  if (pressingW == true){
+    angle2 -= 0.1;
+  }
+  if (pressingS == true){
+    angle2 += 0.1;
+  }
+  if (angle > 1.55){
+    angle2 = 1.55;
+  } else if (angle < -1.55){
+    angle2 = -1.55;
+  }
+// END for if-statement til rotation i singleplayer
+  
+  pushMatrix();
+  translate(Player2x,Player2y);
+  rotate(angle2);
+  imageMode(CENTER);
+  image(Hekla,0,0);
+  popMatrix();
+  
+EnemyPosy2 = EnemyPosy2 + EnemySpeed;
+if (EnemyPosy2 > height){
+  EnemyPosx2 = round(random(940));
+}
+int Essay = ceil(random(2));
+if (Essay == 1){
+image(Essay1, EnemyPosx2, EnemyPosy2, 50,50);
+} else {
+image(Essay2, EnemyPosx2, EnemyPosy2, 50,50);
+}
+if (EnemyPosy2 > height){
+   EnemyPosy2 = 60;
  }
 }
