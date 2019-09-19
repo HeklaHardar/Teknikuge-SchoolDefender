@@ -26,6 +26,9 @@ int Player2x;
 int Playery;
 int Player2y;
 
+int[] Karakter ={12,10,7,4,02,00,-3};
+int nukarakter;
+
 void setup(){
   
 size(940, 529);
@@ -48,6 +51,7 @@ Player2x=width/2;
 Playery=height-50;
 Player2y=height-50;
 
+nukarakter=2;
 }
 
 
@@ -73,6 +77,8 @@ switch(state){
   break;
   
   case GAMEOVER:
+  
+  rect(50,50,50,50);
   
   // TINT?? 
 

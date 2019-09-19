@@ -46,12 +46,13 @@ if (Playerx>900){
 EnemyPosy = EnemyPosy + EnemySpeed;
 if (EnemyPosy > height){
   EnemyPosx = round(random(930));
+  EnemyPosy = 60;
 }
 image(Bog, EnemyPosx, EnemyPosy, 50,50);
 
-if (EnemyPosy > height){
-   EnemyPosy = 60;
- }
+//if (EnemyPosy > height){
+ //  EnemyPosy = 60;
+ //}
 
 
 //------------------------------------------------
@@ -97,6 +98,7 @@ if (Player2x>900){
 EnemyPosy2 = EnemyPosy2 + EnemySpeed;
 if (EnemyPosy2 > height){
   EnemyPosx2 = round(random(940));
+  EnemyPosy2 = 60;
 }
 int Essay = ceil(random(2));
 if (Essay == 1){
@@ -104,7 +106,7 @@ image(Essay1, EnemyPosx2, EnemyPosy2, 50,50);
 } else {
 image(Essay2, EnemyPosx2, EnemyPosy2, 50,50);
 }
-if (EnemyPosy2 > height){
-   EnemyPosy2 = 60;
- }
+//if (EnemyPosy2 > height){
+ //  EnemyPosy2 = 60;
+// }
 }

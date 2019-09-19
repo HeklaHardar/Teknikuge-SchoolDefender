@@ -9,6 +9,15 @@ void Display_Singleplayer(){
 background(lokale);
 imageMode(CENTER);
 image(Tavle,width/2,45, 128,90);
+
+textAlign(CENTER, CENTER);
+fill(#FFE3EA);
+textFont(basic);
+textSize(30);
+text(Karakter[nukarakter], width/2, 45);
+
+
+
 // Gør left og right true for at de kan bruges til smooth bevægelse (For PlayerKlaus).
 if (left == true){
     Playerx-=10;
@@ -48,10 +57,18 @@ if (Playerx>900){
 EnemyPosy = EnemyPosy + EnemySpeed;
 if (EnemyPosy > height){
   EnemyPosx = round(random(940));
+  EnemyPosy = 60;
+  if(nukarakter>=6){
+    state=3;
+  }
+  nukarakter++;
+  
 }
 image(Bog, EnemyPosx, EnemyPosy, 50,50);
 
-if (EnemyPosy > height){
-   EnemyPosy = 60;
- }
+//if (EnemyPosy > height){
+//   EnemyPosy = 60;
+// }
+
+
 }
