@@ -29,20 +29,19 @@ void keyPressed(){
     if (keyCode == DOWN){
     pressingDown = true;
    }
-   
-    if (keyCode == 'A'){
-    A = true;
+  }
+    if (key == 'a'){
+    pressingA = true;
     }
-    if (keyCode == 'D'){
-    D = true;
+    if (key == 'd'){
+    pressingD = true;
    }
-    if (keyCode == 'W'){
+    if (key == 'w'){
     pressingW = true;
    }
-    if (keyCode == 'S'){
+    if (key == 's'){
     pressingS = true;
     }
-   }
   }
  }
 void keyReleased(){
@@ -76,20 +75,19 @@ if(state==1){
     if (keyCode == DOWN){
     pressingDown = false;
    }
+  }
    
-   
-    if (keyCode == 'A'){
-    A = false;
+    if (key == 'a'){
+    pressingA = false;
     }
-    if (keyCode == 'D'){
-    D = false;
+    if (key == 'd'){
+    pressingD = false;
    }
-    if (keyCode == 'W'){
+    if (key == 'w'){
     pressingW = false;
    }
-    if (keyCode == 'S'){
+    if (key == 's'){
     pressingS = false;
    }
-  }
  }
 }

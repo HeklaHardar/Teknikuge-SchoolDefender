@@ -1,4 +1,4 @@
-boolean pressingW, pressingS, A, D;
+boolean pressingW, pressingS, pressingA, pressingD;
 boolean left, right;
 float EnemyPosx2 = round(random(930));
 float EnemyPosy2 = 0;
@@ -58,12 +58,21 @@ if (EnemyPosy > height){
 //------------------------------------------------
 //------------------------------------------------
 
-if (A == true){
+if (pressingA == true){
     Player2x-=10;
 }
-if (D == true){
+if (pressingD == true){
     Player2x+=10;
 }
+
+// Lav edge for Playerx
+if (Player2x<40){
+   Player2x=40;
+}
+if (Player2x>900){
+   Player2x=900;
+}
+
 // Laver if-statements til at give PlayerKlaus roterene evner
   if (pressingW == true){
     angle2 -= 0.1;
@@ -71,9 +80,9 @@ if (D == true){
   if (pressingS == true){
     angle2 += 0.1;
   }
-  if (angle > 1.55){
+  if (angle2 > 1.55){
     angle2 = 1.55;
-  } else if (angle < -1.55){
+  } else if (angle2 < -1.55){
     angle2 = -1.55;
   }
 // END for if-statement til rotation i singleplayer
