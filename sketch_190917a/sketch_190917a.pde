@@ -19,7 +19,7 @@ final int MAIN_MENU = 0;
 final int GAME = 1;
 final int MULTIGAME =2;
 final int GAMEOVER = 3;
-final int HIGHSCORE = 4;
+final int WINSCREEN = 4;
 
 int Playerx;
 int Player2x;
@@ -82,7 +82,9 @@ switch(state){
 
   break; 
   
-  case HIGHSCORE:
+  case WINSCREEN:
+
+  Display_Winscreen();
 
   break;
   

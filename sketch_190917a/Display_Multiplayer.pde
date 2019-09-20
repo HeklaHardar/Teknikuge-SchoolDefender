@@ -7,6 +7,21 @@ void Display_Multiplayer(){
 background(lokale2);
 imageMode(CENTER);
 image(Tavle,width/2,45, 128,90);
+textAlign(CENTER, CENTER);
+fill(#FFE3EA);
+textFont(basic);
+textSize(30);
+// Display karakter
+text(Karakter[nukarakter], width/2, 45);
+  if(nukarakter>=6){
+    state=3;
+  }
+    if(nukarakter<=0){
+    state=4;
+  }
+
+
+
 // Gør left og right true for at de kan bruges til smooth bevægelse (For PlayerKlaus).
 if (left == true){
     Playerx-=10;
@@ -47,6 +62,7 @@ EnemyPosy = EnemyPosy + EnemySpeed;
 if (EnemyPosy > height){
   EnemyPosx = round(random(930));
   EnemyPosy = 60;
+  nukarakter++;
 }
 image(Bog, EnemyPosx, EnemyPosy, 50,50);
 
@@ -99,6 +115,7 @@ EnemyPosy2 = EnemyPosy2 + EnemySpeed;
 if (EnemyPosy2 > height){
   EnemyPosx2 = round(random(940));
   EnemyPosy2 = 60;
+  nukarakter++;
 }
 int Essay = ceil(random(2));
 if (Essay == 1){

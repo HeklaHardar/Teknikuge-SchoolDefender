@@ -19,6 +19,9 @@ text(Karakter[nukarakter], width/2, 45);
   if(nukarakter>=6){
     state=3;
   }
+    if(nukarakter<=0){
+    state=4;
+  }
 
 
 
@@ -66,10 +69,6 @@ if (EnemyPosy > height){
 }
 
 image(Bog, EnemyPosx, EnemyPosy, 50,50);
-
-//if (EnemyPosy > height){
-//   EnemyPosy = 60;
-// }
 
 
 }
