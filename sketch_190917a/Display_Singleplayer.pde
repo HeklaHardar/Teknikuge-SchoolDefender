@@ -14,7 +14,11 @@ textAlign(CENTER, CENTER);
 fill(#FFE3EA);
 textFont(basic);
 textSize(30);
+// Display karakter
 text(Karakter[nukarakter], width/2, 45);
+  if(nukarakter>=6){
+    state=3;
+  }
 
 
 
@@ -58,12 +62,9 @@ EnemyPosy = EnemyPosy + EnemySpeed;
 if (EnemyPosy > height){
   EnemyPosx = round(random(940));
   EnemyPosy = 60;
-  if(nukarakter>=6){
-    state=3;
-  }
   nukarakter++;
-  
 }
+
 image(Bog, EnemyPosx, EnemyPosy, 50,50);
 
 //if (EnemyPosy > height){
