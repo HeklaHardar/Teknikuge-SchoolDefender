@@ -6,7 +6,9 @@ boolean pressingUp;
 boolean pressingDown;
 
 void Display_Singleplayer(){
+  
 background(lokale);
+// TAVLE+KARAKTER
 imageMode(CENTER);
 image(Tavle,width/2,45, 128,90);
 
@@ -16,9 +18,13 @@ textFont(basic);
 textSize(30);
 // Display karakter
 text(Karakter[nukarakter], width/2, 45);
+
+// GAME OVER
   if(nukarakter>=6){
     state=3;
   }
+  
+// YOU WIN
     if(nukarakter<=0){
     state=4;
   }
@@ -62,6 +68,7 @@ if (Playerx>900){
   popMatrix();
   
 EnemyPosy = EnemyPosy + EnemySpeed;
+// NÅR ENEMY RAMMER JORDEN
 if (EnemyPosy > height){
   EnemyPosx = round(random(940));
   EnemyPosy = 60;
