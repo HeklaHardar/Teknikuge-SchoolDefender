@@ -14,7 +14,7 @@ PFont zerovelo;
 PFont basic;
 
 // STATES
-int state = 0; //The current state
+int state = 1; //The current state
 final int MAIN_MENU = 0;
 final int GAME = 1;
 final int MULTIGAME =2;
@@ -37,7 +37,7 @@ lokale = loadImage("Classroom.jpg");
 lokale2 = loadImage("lokale2.jpg");
 skole = loadImage("bygning.jpg");
 Klaus = loadImage("Klaus_Pixelart.png");
-Hekla = loadImage("Hekla_Pixelart.png");
+Hekla = loadImage("Hekla_PixelArt.png");
 Bog = loadImage("Flying book.png");
 Tavle = loadImage("Tavle.png");
 Essay1 = loadImage("Essay1.png");

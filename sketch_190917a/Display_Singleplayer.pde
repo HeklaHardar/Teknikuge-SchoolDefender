@@ -2,6 +2,8 @@ float EnemyPosx = round(random(940));
 float EnemyPosy = 0;
 float EnemySpeed = 4;
 float angle, angle2;
+float radius = 15;
+PVector Hit1 = new PVector();
 boolean pressingUp;
 boolean pressingDown;
 
@@ -66,6 +68,22 @@ if (Playerx>900){
   imageMode(CENTER);
   image(Klaus,0,0);
   popMatrix();
+  
+  //Hitbox for cirklen ved hoved
+  Hit1.set(12.5,0);
+  Hit1.rotate(-PI/2);
+  Hit1.rotate(angle);
+  stroke(0);
+  noFill();
+  ellipse(Playerx + Hit1.x,Playery + Hit1.y,radius*3,radius*3);
+  
+  //Hitbox for cirklen ved ben
+  Hit1.set(12.5,0);
+  Hit1.rotate(PI/2);
+  Hit1.rotate(angle);
+  stroke(0);
+  noFill();
+  ellipse(Playerx + Hit1.x,Playery + Hit1.y,radius*3,radius*3);
   
 EnemyPosy = EnemyPosy + EnemySpeed;
 // NÅR ENEMY RAMMER JORDEN
