@@ -61,36 +61,26 @@ void draw(){
 
 
 switch(state){
+  
   case MAIN_MENU:
   Display_Main_Menu();
-  
   break;
   
   case GAME:
-  
   Display_Singleplayer();
-
   break; 
   
   case MULTIGAME:
-  
   Display_Multiplayer();
-
   break;
   
-  case GAMEOVER:
-  
+  case GAMEOVER: 
   Display_Gameover();
-
   break; 
   
   case WINSCREEN:
-
   Display_Winscreen();
-
   break;
-  
-  
   
   } // END CASES
 }
