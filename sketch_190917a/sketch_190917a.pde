@@ -15,7 +15,7 @@ PFont zerovelo;
 PFont basic;
 
 // STATES
-int state = 0; //The current state
+int state = 1; //The current state
 final int MAIN_MENU = 0;
 final int GAME = 1;
 final int MULTIGAME =2;
@@ -27,60 +27,59 @@ int Player2x;
 int Playery;
 int Player2y;
 
-int[] Karakter ={12,10,7,4,02,00,-3};
+int[] Karakter ={12, 10, 7, 4, 02, 00, -3};
 int nukarakter;
 
-void setup(){
-  
-size(940, 529);
+void setup() {
 
-lokale = loadImage("Classroom.jpg");
-lokale2 = loadImage("lokale2.jpg");
-skole = loadImage("bygning.jpg");
-Klaus = loadImage("Klaus_Pixelart.png");
-Hekla = loadImage("Hekla_PixelArt.png");
-Bog = loadImage("Flying book.png");
-Tavle = loadImage("Tavle.png");
-Essay1 = loadImage("Essay1.png");
-Essay2 = loadImage("Essay2.png");
-Blyant = loadImage("Blyant.png");
+  size(940, 529);
 
-zerovelo = createFont("zerovelo.ttf", 50);
-basic = createFont("Lucida Sans", 12);
+  lokale = loadImage("Classroom.jpg");
+  lokale2 = loadImage("lokale2.jpg");
+  skole = loadImage("bygning.jpg");
+  Klaus = loadImage("Klaus_Pixelart.png");
+  Hekla = loadImage("Hekla_PixelArt.png");
+  Bog = loadImage("Flying book.png");
+  Tavle = loadImage("Tavle.png");
+  Essay1 = loadImage("Essay1.png");
+  Essay2 = loadImage("Essay2.png");
+  Blyant = loadImage("Blyant.png");
 
-Playerx=width/2;
-Player2x=width/2;
-Playery=height-50;
-Player2y=height-50;
+  zerovelo = createFont("zerovelo.ttf", 50);
+  basic = createFont("Lucida Sans", 12);
 
-nukarakter=2;
+  Playerx=width/2;
+  Player2x=width/2;
+  Playery=height-50;
+  Player2y=height-50;
+
+  nukarakter=2;
 }
 
 
-void draw(){
+void draw() {
 
 
-switch(state){
-  
+  switch(state) {
+
   case MAIN_MENU:
-  Display_Main_Menu();
-  break;
-  
+    Display_Main_Menu();
+    break;
+
   case GAME:
-  Display_Singleplayer();
-  break; 
-  
+    Display_Singleplayer();
+    break; 
+
   case MULTIGAME:
-  Display_Multiplayer();
-  break;
-  
+    Display_Multiplayer();
+    break;
+
   case GAMEOVER: 
-  Display_Gameover();
-  break; 
-  
+    Display_Gameover();
+    break; 
+
   case WINSCREEN:
-  Display_Winscreen();
-  break;
-  
+    Display_Winscreen();
+    break;
   } // END CASES
 }
