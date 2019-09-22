@@ -8,6 +8,7 @@ PImage Bog;
 PImage Tavle;
 PImage Essay1;
 PImage Essay2;
+PImage Blyant;
 
 // FONTS
 PFont zerovelo;
@@ -42,6 +43,7 @@ Bog = loadImage("Flying book.png");
 Tavle = loadImage("Tavle.png");
 Essay1 = loadImage("Essay1.png");
 Essay2 = loadImage("Essay2.png");
+Blyant = loadImage("Blyant.png");
 
 zerovelo = createFont("zerovelo.ttf", 50);
 basic = createFont("Lucida Sans", 12);

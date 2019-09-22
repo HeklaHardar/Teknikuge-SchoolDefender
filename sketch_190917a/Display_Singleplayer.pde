@@ -4,8 +4,13 @@ float EnemySpeed = 4;
 float angle, angle2;
 float radius = 15;
 PVector Hit1 = new PVector();
+PVector Speed = new PVector(0,-10);
+PVector v = new PVector(1,0);
 boolean pressingUp;
 boolean pressingDown;
+
+int skudDelay = 20;
+ArrayList<PVector> list = new ArrayList<PVector>();
 
 void Display_Singleplayer(){
   
@@ -84,6 +89,26 @@ if (Playerx>900){
   stroke(0);
   noFill();
   ellipse(Playerx + Hit1.x,Playery + Hit1.y,radius*3,radius*3);
+  
+  if (mousePressed && skudDelay > 20) {
+    println("skyd!" + frameCount);
+    list.add(new PVector(Playerx,Playery));
+    skudDelay=0;
+  } else {
+   // println("skyd ikke!"  + skudDelay);
+   if(skudDelay < 100)
+    skudDelay = skudDelay + 1;
+  }
+  
+  // Charge Meter
+  rect(10,10,50,skudDelay);
+  
+  
+  //tegner og flytter skud
+  for(PVector skud : list){
+    skud.add(Speed);
+    image(Blyant,skud.x,skud.y);
+  }
   
 EnemyPosy = EnemyPosy + EnemySpeed;
 // NÅR ENEMY RAMMER JORDEN
