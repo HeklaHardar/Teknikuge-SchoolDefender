@@ -57,6 +57,22 @@ if (Playerx>900){
   imageMode(CENTER);
   image(Klaus,0,0);
   popMatrix();
+  
+    //Hitbox for cirklen ved hoved
+  Hit1.set(12.5,0);
+  Hit1.rotate(-PI/2);
+  Hit1.rotate(angle);
+  stroke(0);
+  noFill();
+  ellipse(Playerx + Hit1.x,Playery + Hit1.y,radius*3,radius*3);
+  
+  //Hitbox for cirklen ved ben
+  Hit1.set(12.5,0);
+  Hit1.rotate(PI/2);
+  Hit1.rotate(angle);
+  stroke(0);
+  noFill();
+  ellipse(Playerx + Hit1.x,Playery + Hit1.y,radius*3,radius*3);
 
 EnemyPosy = EnemyPosy + EnemySpeed;
 if (EnemyPosy > height){
@@ -110,6 +126,22 @@ if (Player2x>900){
   imageMode(CENTER);
   image(Hekla,0,0);
   popMatrix();
+  
+    //Hitbox for cirklen ved hoved
+  Hit1.set(12.5,0);
+  Hit1.rotate(-PI/2);
+  Hit1.rotate(angle2);
+  stroke(0);
+  noFill();
+  ellipse(Player2x + Hit1.x,Player2y + Hit1.y,radius*3,radius*3);
+  
+  //Hitbox for cirklen ved ben
+  Hit1.set(12.5,0);
+  Hit1.rotate(PI/2);
+  Hit1.rotate(angle2);
+  stroke(0);
+  noFill();
+  ellipse(Player2x + Hit1.x,Player2y + Hit1.y,radius*3,radius*3);
   
 EnemyPosy2 = EnemyPosy2 + EnemySpeed;
 if (EnemyPosy2 > height){

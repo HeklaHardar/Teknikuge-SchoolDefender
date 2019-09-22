@@ -14,7 +14,7 @@ PFont zerovelo;
 PFont basic;
 
 // STATES
-int state = 1; //The current state
+int state = 2; //The current state
 final int MAIN_MENU = 0;
 final int GAME = 1;
 final int MULTIGAME =2;
