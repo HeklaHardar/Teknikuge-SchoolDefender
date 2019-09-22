@@ -1,4 +1,4 @@
-class skud {
+/*class skud {
 
   PVector pos, vel;
   ArrayList<skud> skudList = new ArrayList<skud>();
@@ -13,4 +13,4 @@ class skud {
     pos.add(vel);
     image(Blyant, pos.x, pos.y);
   }
-}
+}*/

@@ -1,18 +1,24 @@
 float EnemyPosx = round(random(940));
 float EnemyPosy = 0;
 float EnemySpeed = 4;
-float angle, angle2, rotationForce = PI/42;
+float KebabPosx = (random(940));
+float KebabPosy = 0;
+float angle, angle2;
 float radius = 15;
+float kebabSpawn = 180;
+PVector kebabVel = new PVector(0, 3);
 PVector Hit1 = new PVector();
 PVector Hit2 = new PVector();
 PVector Speed = new PVector(0, -5);
-PVector dir = new PVector(0,-1);
+PVector dir = new PVector(0, -1);
 boolean pressingUp;
 boolean pressingDown;
 
 int skudDelay = 20;
 ArrayList<PVector> list = new ArrayList<PVector>();
-ArrayList<skud> skudList = new ArrayList<skud>();
+//ArrayList<skud> skudList = new ArrayList<skud>();
+ArrayList<PVector> kebabList = new ArrayList<PVector>();
+
 
 void Display_Singleplayer() {
   gammelstate=1;
@@ -96,8 +102,9 @@ void Display_Singleplayer() {
   ellipse(Playerx + Hit1.x, Playery + Hit1.y, radius*3, radius*3);
 
   if (mousePressed && skudDelay > 20) {
-    println("skyd!" + frameCount);
-    skudList.add(new skud(new PVector(Playerx,Playery), new PVector(dir.x, dir.y)));
+    //println("skyd!" + frameCount);
+    println(mouseX, mouseY);
+    //skudList.add(new skud(new PVector(Playerx,Playery), new PVector(dir.x, dir.y),angle));
     list.add(new PVector(Playerx, Playery));
     skudDelay=0;
   } else {
@@ -123,12 +130,34 @@ void Display_Singleplayer() {
     EnemyPosy = 60;
     nukarakter++;
   }
-
-  for(int i = 0; i<skudList.size(); i++){
-   skudList.get(i).update();
-  }
-
-
-
   image(Bog, EnemyPosx, EnemyPosy, 50, 50);
+  /*for(int i = 0; i<skudList.size(); i++){
+   skudList.get(i).update();
+   }*/
+
+  kebabSpawn--;
+
+// Laver en if-statement til at Spawne kebaber
+  if (kebabSpawn <= 0) {
+    kebabList.add(new PVector(random(width), 0));
+    kebabSpawn = 120;
+  }
+  
+  // Danner et forloop til at kunne lave en række a kebaber der spawner og giver os liv.
+  for (int i = 0; i<kebabList.size(); i++) {
+    kebabList.get(i).add(kebabVel);
+    image(Kebab, kebabList.get(i).x, kebabList.get(i).y);
+
+    if (kebabList.get(i).y >= height) {
+      kebabList.remove(i);
+      i--;
+      continue;
+    }
+
+    if (dist(kebabList.get(i).x, kebabList.get(i).y, Playerx, Playery) < radius*3) {
+      kebabList.remove(i);
+      nukarakter--;
+      i--;
+    }
+  }
 }

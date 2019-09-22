@@ -172,7 +172,48 @@ void Display_Multiplayer() {
   } else {
     image(Essay2, EnemyPosx2, EnemyPosy2, 50, 50);
   }
-  //if (EnemyPosy2 > height){
-  //  EnemyPosy2 = 60;
-  // }
+ 
+  
+  kebabSpawn--;
+
+// Laver en if-statement til at Spawne kebaber
+  if (kebabSpawn <= 0) {
+    kebabList.add(new PVector(random(width), 0));
+    kebabSpawn = 10;
+  }
+  
+  // Danner et forloop til at kunne lave en række a kebaber der spawner og giver os liv.
+  for (int i = 0; i<kebabList.size(); i++) {
+    kebabList.get(i).add(kebabVel);
+    image(Kebab, kebabList.get(i).x, kebabList.get(i).y);
+
+    if (kebabList.get(i).y >= height) {
+      kebabList.remove(i);
+      i--;
+      continue;
+    }
+
+    if (dist(kebabList.get(i).x, kebabList.get(i).y, Playerx, Playery) < radius*3) {
+      kebabList.remove(i);
+      nukarakter--;
+      i--;
+    }
+  }
+    // Danner et forloop til at kunne lave en række a kebaber der spawner og giver os liv.
+  for (int i = 0; i<kebabList.size(); i++) {
+    kebabList.get(i).add(kebabVel);
+    image(Kebab, kebabList.get(i).x, kebabList.get(i).y);
+
+    if (kebabList.get(i).y >= height) {
+      kebabList.remove(i);
+      i--;
+      continue;
+    }
+
+    if (dist(kebabList.get(i).x, kebabList.get(i).y, Player2x, Player2y) < radius*3) {
+      kebabList.remove(i);
+      nukarakter--;
+      i--;
+    }
+  }
 }

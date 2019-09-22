@@ -9,13 +9,14 @@ PImage Tavle;
 PImage Essay1;
 PImage Essay2;
 PImage Blyant;
+PImage Kebab;
 
 // FONTS
 PFont zerovelo;
 PFont basic;
 
 // STATES
-int state = 1; //The current state
+int state = 0; //The current state
 final int MAIN_MENU = 0;
 final int GAME = 1;
 final int MULTIGAME =2;
@@ -46,6 +47,7 @@ void setup() {
   Essay1 = loadImage("Essay1.png");
   Essay2 = loadImage("Essay2.png");
   Blyant = loadImage("Blyant.png");
+  Kebab = loadImage("Kebab.png");
 
   zerovelo = createFont("zerovelo.ttf", 50);
   basic = createFont("Lucida Sans", 12);
