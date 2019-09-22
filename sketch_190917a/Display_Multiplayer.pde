@@ -4,6 +4,7 @@ float EnemyPosx2 = round(random(930));
 float EnemyPosy2 = 0;
 
 void Display_Multiplayer() {
+  gammelstate=2;
   background(lokale2);
   imageMode(CENTER);
   image(Tavle, width/2, 45, 128, 90);

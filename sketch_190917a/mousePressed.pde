@@ -20,13 +20,16 @@ void mousePressed() {
   }
 
   if (state==3) {
-    // KNAPPER I MENU
-    // KNAP SINGLEPLAYER
+    // KNAPPER GAME OVER
     if (mouseX>((width/2)-75) && mouseX<((width/2)+75) && mouseY>((2.3*(height/4))-25) && mouseY<((2.3*(height/4))+25)) {
       Reset();
+      if(gammelstate==1){
       state=1;
+      }else if(gammelstate==2){
+      state=2;
+      }
     }
-    //KNAP MULTIPLAYER
+
     if (mouseX>((width/2)-75) && mouseX<((width/2)+75) && mouseY>((3*(height/4))-25) && mouseY<((3*(height/4))+25)) {
       Reset();
       state=0;

@@ -30,6 +30,8 @@ int Player2y;
 int[] Karakter ={12, 10, 7, 4, 02, 00, -3};
 int nukarakter;
 
+int gammelstate;
+
 void setup() {
 
   size(940, 529);

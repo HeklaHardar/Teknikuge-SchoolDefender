@@ -15,6 +15,7 @@ ArrayList<PVector> list = new ArrayList<PVector>();
 ArrayList<skud> skudList = new ArrayList<skud>();
 
 void Display_Singleplayer() {
+  gammelstate=1;
 
   background(lokale);
   // TAVLE+KARAKTER
