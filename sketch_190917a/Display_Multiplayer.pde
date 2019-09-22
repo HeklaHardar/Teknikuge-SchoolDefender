@@ -82,10 +82,6 @@ if (EnemyPosy > height){
 }
 image(Bog, EnemyPosx, EnemyPosy, 50,50);
 
-//if (EnemyPosy > height){
- //  EnemyPosy = 60;
- //}
-
 
 //------------------------------------------------
 //------------------------------------------------
