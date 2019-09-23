@@ -6,7 +6,9 @@ float KebabPosy = 0;
 float angle, angle2;
 float radius = 15;
 float kebabSpawn = 180;
+float bogSpawn = 180;
 PVector kebabVel = new PVector(0, 3);
+PVector bogVel = new PVector(0, 3);
 PVector Hit1 = new PVector();
 PVector Hit2 = new PVector();
 PVector Speed = new PVector(0, -5);
@@ -18,6 +20,7 @@ int skudDelay = 20;
 ArrayList<PVector> list = new ArrayList<PVector>();
 //ArrayList<skud> skudList = new ArrayList<skud>();
 ArrayList<PVector> kebabList = new ArrayList<PVector>();
+ArrayList<PVector> bogList = new ArrayList<PVector>();
 
 
 void Display_Singleplayer() {
@@ -115,7 +118,7 @@ void Display_Singleplayer() {
   // Charge Meter
   rect(10, 10, 20, skudDelay);
 
-  Hit2.set(0, 0);
+  //Hit2.set(0, 0);
   //tegner og flytter skud
   for (PVector skud : list) {
     skud.add(Speed);
@@ -123,26 +126,52 @@ void Display_Singleplayer() {
     ellipse(skud.x + Hit2.x, skud.y + Hit2.y, radius*3, radius*3);
   }
 
-  EnemyPosy = EnemyPosy + EnemySpeed;
-  // NÅR ENEMY RAMMER JORDEN
-  if (EnemyPosy > height) {
-    EnemyPosx = round(random(940));
-    EnemyPosy = 60;
-    nukarakter++;
-  }
-  image(Bog, EnemyPosx, EnemyPosy, 50, 50);
+  /*EnemyPosy = EnemyPosy + EnemySpeed;
+   // NÅR ENEMY RAMMER JORDEN
+   if (EnemyPosy > height) {
+   EnemyPosx = round(random(940));
+   EnemyPosy = 60;
+   nukarakter++;
+   }
+   image(Bog, EnemyPosx, EnemyPosy, 50, 50);
   /*for(int i = 0; i<skudList.size(); i++){
    skudList.get(i).update();
    }*/
 
+    bogSpawn--;
+  // Laver en if-statement til at Spawne bøger
+  if (bogSpawn <= 0) {
+    bogList.add(new PVector(random(width), 0));
+    bogSpawn = 120;
+  }
+
+  // Danner et forloop til at kunne lave en række a bøger der spawner og kan skydes
+  for (int i = 0; i<bogList.size(); i++) {
+    bogList.get(i).add(bogVel);
+    image(Bog, bogList.get(i).x, bogList.get(i).y);
+
+    if (bogList.get(i).y >= height) {
+      bogList.remove(i);
+      i--;
+      continue;
+    }
+
+    if (dist(bogList.get(i).x, bogList.get(i).y, Hit2.x, Hit2.y) < radius*3) {
+      bogList.remove(i);
+      i--;
+    }
+  }
+
+
+
   kebabSpawn--;
 
-// Laver en if-statement til at Spawne kebaber
+  // Laver en if-statement til at Spawne kebaber
   if (kebabSpawn <= 0) {
     kebabList.add(new PVector(random(width), 0));
     kebabSpawn = 120;
   }
-  
+
   // Danner et forloop til at kunne lave en række a kebaber der spawner og giver os liv.
   for (int i = 0; i<kebabList.size(); i++) {
     kebabList.get(i).add(kebabVel);
