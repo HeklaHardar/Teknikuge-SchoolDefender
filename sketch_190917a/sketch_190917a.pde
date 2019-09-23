@@ -41,13 +41,13 @@ void setup() {
   lokale2 = loadImage("lokale2.jpg");
   skole = loadImage("bygning.jpg");
   Klaus = loadImage("Klaus_Pixelart.png");
-  Hekla = loadImage("Hekla_PixelArt.png");
+  Hekla = loadImage("Hekla_Pixelart.png");
   Bog = loadImage("Flying book.png");
   Tavle = loadImage("Tavle.png");
   Essay1 = loadImage("Essay1.png");
   Essay2 = loadImage("Essay2.png");
   Blyant = loadImage("Blyant.png");
-  Kebab = loadImage("Kebab.png");
+  Kebab = loadImage("kebab.png");
 
   zerovelo = createFont("zerovelo.ttf", 50);
   basic = createFont("Lucida Sans", 12);
