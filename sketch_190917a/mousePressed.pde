@@ -19,7 +19,7 @@ void mousePressed() {
     }
   }
 
-  if (state==3) {
+  if (state==3||state==4) {
     // KNAPPER GAME OVER
     if (mouseX>((width/2)-75) && mouseX<((width/2)+75) && mouseY>((2.3*(height/4))-25) && mouseY<((2.3*(height/4))+25)) {
       Reset();
